@@ -8,7 +8,7 @@
 "SEX:{1:'Male',2:'Female'}"
 "MARSTAT:{1:'Married',2:'Living in common-law',3:'Widowed',4:'Separated',5:'Divorced',6:'Single, never married'}"
 "EDUC:{0:'0 to 8 years',1:'Some high school',2:'High school graduate',3:'Some postsecondary',4:'Postsecondary certificate or diploma',5:'Bachelor's degree',6:'Above bachelor's degree'}"
-"MJH:{1:'Single jobholder, including job changers',2:'Multiple jobholder',blank:'Not applicable',EVERWORK:,1:'Yes, within last year',2:'Yes, more than 1 year ago',3:'No, never worked',blank:'Not applicable'}"
+"MJH:{1:'Single jobholder, including job changers',2:'Multiple jobholder'}"
 "EVERWORK:{1:'Yes, within last year',2:'Yes, more than 1 year ago',3:'No, never worked'}"
 "FTPTLAST:{1:'Full-time (30 hours or more)',2:'Part-time (1 to 29 hours)'}"
 "COWMAIN:{1:'Public sector employees',2:'Private sector employees',3:'Self-employed incorporated, with paid help',4:'Self-employed incorporated, no paid help',5:'Self-employed unincorporated, with paid help',6:'Self-employed unincorporated, no paid help',7:'Unpaid family worker'}"
