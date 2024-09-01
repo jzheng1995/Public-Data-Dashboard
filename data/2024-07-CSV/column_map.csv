@@ -1,6 +1,6 @@
 ﻿Column mappings
 "'SURVMNTH':{1:'January',2:'February',3:'March',4:'April',5:'May',6:'June',7:'July',8:'August',9:'September',10:'October',11:'November',12:'December'}"
-"'LFSSTAT':{1:'Employed, at work',2:'Employed, absent from work',3:'Unemployed',4:'Not in labour force','PROV':,10:'Newfoundland and Labrador',11:'Prince Edward Island',12:'Nova Scotia',13:'New Brunswick',24:'Quebec',35:'Ontario',46:'Manitoba'}"
+"'LFSSTAT':{1:'Employed, at work',2:'Employed, absent from work',3:'Unemployed',4:'Not in labour force'}"
 "'PROV':{10:'Newfoundland and Labrador',11:'Prince Edward Island',12:'Nova Scotia',13:'New Brunswick',24:'Quebec',35:'Ontario',46:'Manitoba',47:'Saskatchewan',48:'Alberta',59:'British Columbia'}"
 "'CMA':{1:'QuÈbec',2:'MontrÈal',3:'OttawañGatineau (Ontario part)',4:'Toronto',5:'Hamilton',6:'Winnipeg',7:'Calgary',8:'Edmonton',9:'Vancouver',0:'Other CMA or non-CMA'}"
 "'AGE_12':{1:'15 to 19 years',2:'20 to 24 years',3:'25 to 29 years',4:'30 to 34 years',5:'35 to 39 years',6:'40 to 44 years',7:'45 to 49 years',8:'50 to 54 years',9:'55 to 59 years',10:'60 to 64 years',11:'65 to 69 years',12:'70 and over'}"
