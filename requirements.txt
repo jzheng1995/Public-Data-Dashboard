@@ -7,3 +7,4 @@ folium
 geopandas
 branca
 streamlit_folium
+openpyxl
