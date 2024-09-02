@@ -86,7 +86,7 @@ class MappingEncoder:
         """
         self.fit(df)
         return self.transform(df)
-
+@st.cache_data
 def geo_data():
     prov_data = gpd.read_file("data/georef-canada-province@public.geojson")
     prov_dict = {'Québec': 'Quebec',
@@ -99,6 +99,7 @@ def geo_data():
     for key in prov_dict.keys():
         prov_data['prov_name_fr'] = prov_data['prov_name_fr'].replace(key, prov_dict[key])
     return prov_data
+
 
 def fmap(df = None, width = 725):
     if df is None:

@@ -8,3 +8,5 @@ geopandas
 branca
 streamlit_folium
 openpyxl
+altair
+vegafusion[embed]
