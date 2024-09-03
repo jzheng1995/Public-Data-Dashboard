@@ -124,7 +124,7 @@ def fmap(df = None, width = 725):
         fill_opacity=0.5,
         line_opacity=.1,
         highlight=True,
-        legend_name="Sample count",
+        legend_name="Number of Records",
     ).add_to(m)
 
     folium.LayerControl().add_to(m)
