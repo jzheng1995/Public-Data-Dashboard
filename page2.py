@@ -4,16 +4,15 @@ from helper import *
 
 
 df = load_data()
-
 alt.data_transformers.enable("vegafusion")
 selection = alt.selection_single(fields=['PROV'], empty = 'none')
 
-
+df_light =  df.groupby(['PROV', 'LFSSTAT']).size().reset_index(name = 'count')
 
 # base chart
-base = alt.Chart(df).mark_bar().encode(
+base = alt.Chart(df_light).mark_bar().encode(
     alt.X('PROV', title = 'Province',axis=alt.Axis(labels = False)).sort('-y'),
-    alt.Y(aggregate='count', type='quantitative', title = 'Count of Records'),
+    alt.Y('sum(count)', type='quantitative', title = 'Number of Records'),
     # Set the color encoding for the bars and customize the legend title
     color=alt.Color('PROV:N', legend=alt.Legend(title="Province"), scale = alt.Scale(scheme='tableau10')),
     # Conditional stroke to highlight the selected province
@@ -22,30 +21,31 @@ base = alt.Chart(df).mark_bar().encode(
     strokeWidth=alt.condition(selection, alt.value(3), alt.value(0)),
     tooltip=[
         alt.Tooltip('PROV:N', title='Province: '),
-        alt.Tooltip('count():Q', title='Count: ')
+        alt.Tooltip('sum(count)', title='Count: ')
     ]
 ).properties(
-    width=600,
+    width=500,
     height=300,
 )
 
 # provincial employment
-employment = alt.Chart(df).mark_bar().encode(
+employment = alt.Chart(df_light).mark_bar().encode(
     x = alt.X('LFSSTAT:N', title = 'Employment Status', axis = alt.Axis(labels = False)),
-    y = alt.Y(aggregate = 'count',type = 'quantitative', title = 'Number of Records'),
+    y = alt.Y('sum(count)',type = 'quantitative', title = 'Number of Records'),
     color=alt.Color('LFSSTAT:N',scale = alt.Scale(scheme='oranges'), legend=alt.Legend(title="Employment Status")),
     tooltip=[
         alt.Tooltip('PROV:N', title='Province: '),
-        alt.Tooltip('count():Q', title='Count: ')
+        alt.Tooltip('LFSSTAT:N', title = 'Status: '),
+        alt.Tooltip('sum(count)', title='Count: ')
     ]
 ).transform_filter(
     selection
 ).properties(
-    width = 600,
+    width = 500,
     height = 300
 )
 
-texts = alt.Chart(df).mark_text(
+texts = alt.Chart(df_light).mark_text(
     align='center',
     baseline='middle',
     dy=-200,  # Adjust the y position of the text
@@ -57,6 +57,9 @@ texts = alt.Chart(df).mark_text(
     text=alt.condition(selection, 'PROV:N', alt.value(''))  # Only show text when a province is selected
 ).transform_filter(
     selection
+).properties(
+    width = 500,
+    height = 300
 )
 
 base_text = base.add_selection(selection)
