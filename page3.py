@@ -91,9 +91,9 @@ sex = alt.Chart(demo_df).mark_bar().encode(
 )
 
 educ = alt.Chart(demo_df).mark_bar().encode(
-    x = alt.X('EDUC:O', title = 'Education', axis = alt.Axis(labels = False)),
+    x = alt.X('EDUC:O', title = 'Education', axis = alt.Axis(labels = False), sort = ['0 to 8 years','Some high school','High school graduate','Some postsecondary','Postsecondary certificate or diploma',"Bachelor's degree","Above bachelor's degree"]),
     y = alt.Y('sum(count)',type = 'quantitative', title = 'Number of Records'),
-    color=alt.Color('EDUC:O',scale = alt.Scale(scheme='oranges'), legend=alt.Legend(title="Education Group")),
+    color=alt.Color('EDUC:O',scale = alt.Scale(scheme='oranges'), legend=alt.Legend(title="Education Group")).sort(['0 to 8 years','Some high school','High school graduate','Some postsecondary','Postsecondary certificate or diploma',"Bachelor's degree","Above bachelor's degree"]),
     tooltip=[
         alt.Tooltip('PROV:N', title='Province: '),
         alt.Tooltip('EDUC:O', title = 'Status: '),
